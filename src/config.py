@@ -10,10 +10,12 @@ load_dotenv(PARENT_DIR/'.env')
 
 try:
     # WEATHER_API_KEY = os.environ['VisualCrossing_API_KEY']
-    WEATHER_API_KEY = st.secrets['VisualCrossing_API_KEY']
+    WEATHER_API_KEY = st.secrets['WEATHER_API_KEY']
+except FileNotFoundError:
+    WEATHER_API_KEY = os.getenv['WEATHER_API_KEY']
 except:
     raise Exception(
-        'You need to create a .env file in the project root with the VisualCrossing_API_KEY')
+        'You need to create a .env file in the project root with the WEATHER_API_KEY')
 
 
 HOPSWORKS_PROJECT_NAME = 'taxi_ride_forecast'
@@ -21,6 +23,8 @@ HOPSWORKS_PROJECT_NAME = 'taxi_ride_forecast'
 try:
     # HOPSWORKS_API_KEY = os.environ['HOPSWORKS_API_KEY']
     HOPSWORKS_API_KEY = st.secrets['HOPSWORKS_API_KEY']
+except FileNotFoundError:
+    WEATHER_API_KEY = os.getenv['HOPSWORKS_API_KEY']
 except:
     raise Exception(
         'You need to create a .env file in the project root with the HOPSWORKS_API_KEY')
