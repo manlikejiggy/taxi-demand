@@ -4,9 +4,6 @@ import streamlit as st
 
 from src.paths import PARENT_DIR
 
-# Load key-value pairs from .env file located in the parent directory
-load_dotenv(PARENT_DIR/'.env')
-
 try:
     # WEATHER_API_KEY = os.environ['VisualCrossing_API_KEY']
     WEATHER_API_KEY = st.secrets['WEATHER_API_KEY']
