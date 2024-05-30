@@ -1,6 +1,5 @@
 import mlflow.pyfunc
 import os
-from dotenv import load_dotenv
 import streamlit as st
 
 from src.paths import PARENT_DIR
