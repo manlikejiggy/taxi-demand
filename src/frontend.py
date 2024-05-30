@@ -46,10 +46,6 @@ N_STEPS = 6
 
 def load_shape_data_file() -> pd.DataFrame:
     shapefile_path = os.path.join(SHAPE_DATA_DIR, "taxi_zones.shp")
-    
-    st.write("Shapefile Path:", shapefile_path)
-    st.write("Files in SHAPE_DATA_DIR:")
-    st.write(os.listdir(SHAPE_DATA_DIR))
 
     sf = shapefile.Reader(shapefile_path)
 
