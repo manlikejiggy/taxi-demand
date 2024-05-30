@@ -1,0 +1,41 @@
+name: Taxi-Demand CI/CD
+
+on:
+  schedule:
+    # This schedule triggers the workflow to run at the top of every hour
+    - cron: '0 * * * *'
+    
+  workflow_dispatch:
+
+jobs:
+  run-pipelines:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11'  # Specify the Python version you are using
+
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Configure Poetry
+      run: poetry config virtualenvs.create false  # Configures poetry to not create a virtual environment
+
+    - name: Install dependencies
+      run: poetry install  # Install dependencies as per the pyproject.toml file
+
+    - name: Run Feature Pipeline
+      run: poetry run python src.feature_pipeline.py  # Runs the feature pipeline script
+      env:  # Set the environment variables for the feature pipeline script
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+
+    - name: Run Inference Pipeline
+      run: poetry run python src.inference_pipeline.py  # Runs the inference pipeline script
+      env:  # Set the environment variables for the inference pipeline script
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
