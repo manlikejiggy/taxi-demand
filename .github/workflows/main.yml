@@ -29,13 +29,13 @@ jobs:
       run: poetry install  # Install dependencies as per the pyproject.toml file
 
     - name: Run Feature Pipeline
-      run: poetry run python src.feature_pipeline.py  # Runs the feature pipeline script
+      run: poetry run python src/feature_pipeline.py  # Runs the feature pipeline script
       env:  # Set the environment variables for the feature pipeline script
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
         HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
 
     - name: Run Inference Pipeline
-      run: poetry run python src.inference_pipeline.py  # Runs the inference pipeline script
+      run: poetry run python src/inference_pipeline.py  # Runs the inference pipeline script
       env:  # Set the environment variables for the inference pipeline script
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
         HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
