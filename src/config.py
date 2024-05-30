@@ -1,6 +1,7 @@
 import mlflow.pyfunc
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
 from src.paths import PARENT_DIR
 
@@ -8,7 +9,8 @@ from src.paths import PARENT_DIR
 load_dotenv(PARENT_DIR/'.env')
 
 try:
-    WEATHER_API_KEY = os.environ['VisualCrossing_API_KEY']
+    # WEATHER_API_KEY = os.environ['VisualCrossing_API_KEY']
+    WEATHER_API_KEY = st.secrets['VisualCrossing_API_KEY']
 except:
     raise Exception(
         'You need to create a .env file in the project root with the VisualCrossing_API_KEY')
@@ -17,7 +19,8 @@ except:
 HOPSWORKS_PROJECT_NAME = 'taxi_ride_forecast'
 
 try:
-    HOPSWORKS_API_KEY = os.environ['HOPSWORKS_API_KEY']
+    # HOPSWORKS_API_KEY = os.environ['HOPSWORKS_API_KEY']
+    HOPSWORKS_API_KEY = st.secrets['HOPSWORKS_API_KEY']
 except:
     raise Exception(
         'You need to create a .env file in the project root with the HOPSWORKS_API_KEY')
