@@ -16,6 +16,8 @@ from src.paths import DATA_DIR, SHAPE_DATA_DIR
 from src.data import get_lat_lon
 from src.plot import plot_one_sample, plot_demand_forecast
 
+st.write(SHAPE_DATA_DIR)
+
 
 # Title
 
