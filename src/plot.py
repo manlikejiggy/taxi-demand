@@ -11,7 +11,7 @@ import shapefile
 import geopandas as gpd
 
 
-plt.style.use('rose-pine-moon')
+#plt.style.use('rose-pine-moon')
 
 
 def plot_one_sample(
