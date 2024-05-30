@@ -10,7 +10,7 @@ from src.feature_store import get_feature_store
 import src.config as config 
 
 
-current_date = pd.to_datetime(datetime.now(), utc=True).floor('h') + timedelta(hours=2)
+current_date = pd.to_datetime(datetime.now(), utc=True).floor('h') + timedelta(hours=3)
 print(current_date)
 
 # Load Rides & Weather Data From Hopsworks Feature Store
