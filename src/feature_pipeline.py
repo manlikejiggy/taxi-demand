@@ -5,7 +5,7 @@ import hopsworks
 import src.config as config
 from src.data import transform_raw_data_into_ts_data
 
-current_date = pd.to_datetime(datetime.now(), utc=True).floor('h') + timedelta(hours=2)
+current_date = pd.to_datetime(datetime.now(), utc=True).floor('h') + timedelta(hours=3)
 print(current_date)
 
 # we fetch raw data for the last 28 days, to add redundancy to our data pipeline
