@@ -24,7 +24,7 @@ try:
     # HOPSWORKS_API_KEY = os.environ['HOPSWORKS_API_KEY']
     HOPSWORKS_API_KEY = st.secrets['HOPSWORKS_API_KEY']
 except FileNotFoundError:
-    WEATHER_API_KEY = os.getenv['HOPSWORKS_API_KEY']
+    HOPSWORKS_API_KEY = os.getenv['HOPSWORKS_API_KEY']
 except:
     raise Exception(
         'You need to create a .env file in the project root with the HOPSWORKS_API_KEY')
