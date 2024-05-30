@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Princewill <Princevals2@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+pandas = ">=1.4.3"
+jupyter = "^1.0.0"
+pyarrow = "^15.0.2"
+tqdm = "^4.66.2"
+plotly = "^5.20.0"
+plotly-express = "^0.4.1"
+requests = "^2.31.0"
+scikit-learn = "^1.4.1.post1"
+xgboost = "^2.0.3"
+lightgbm = "^4.3.0"
+optuna = "^3.6.1"
+mlflow = "^2.11.3"
+pyshp = "^2.3.1"
+geopandas = "^0.14.3"
+fastapi = "^0.110.1"
+catboost = "^1.2.3"
+hopsworks = "^3.4.4"
+holidays = "^0.46"
+joblib = "^1.4.0"
+pygam = "^0.9.1"
+python-dotenv = "^1.0.1"
+uvicorn = "^0.29.0"
+setuptools = "^69.5.1"
+seaborn = "^0.13.2"
+matplotlib = "^3.8.4"
+python-multipart = "^0.0.9"
+hsfs = "3.7.6"
+streamlit = "^1.35.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
