@@ -6,8 +6,7 @@ from src.paths import PARENT_DIR
 
 try:
     # WEATHER_API_KEY = os.environ['VisualCrossing_API_KEY']
-    WEATHER_API_KEY = st.secrets['WEATHER_API_KEY']
-except FileNotFoundError:
+    #WEATHER_API_KEY = st.secrets['WEATHER_API_KEY']
     WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
 except:
     raise Exception(
@@ -18,8 +17,7 @@ HOPSWORKS_PROJECT_NAME = 'taxi_ride_forecast'
 
 try:
     # HOPSWORKS_API_KEY = os.environ['HOPSWORKS_API_KEY']
-    HOPSWORKS_API_KEY = st.secrets['HOPSWORKS_API_KEY']
-except FileNotFoundError:
+    #HOPSWORKS_API_KEY = st.secrets['HOPSWORKS_API_KEY']
     HOPSWORKS_API_KEY = os.getenv('HOPSWORKS_API_KEY')
 except:
     raise Exception(
