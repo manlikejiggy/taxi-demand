@@ -21,6 +21,7 @@ from src.plot import plot_one_sample, plot_demand_forecast
 # Title
 
 current_date = pd.to_datetime(datetime.now(), utc=True).floor('H')
+current_date += timedelta(hours=1) #<--- adjusting for UK time
 current_date_str = str(current_date.strftime('%Y-%m-%d %H:%M'))
 st.title(f'NYC Taxi Demand Prediction 🚖')
 
