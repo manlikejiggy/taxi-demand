@@ -10,8 +10,10 @@ from src.feature_store import get_feature_store
 import src.config as config 
 
 
-current_date = pd.to_datetime(datetime.now(), utc=True).floor('h')  + timedelta(hours=1)
-print(current_date)
+current_date = pd.to_datetime(datetime.now(), utc=True).floor('h')
+print(f"Inference Pipeline Current Time Before: {current_date}")
+current_date += timedelta(hours=1)
+print(f"Inference Pipeline Current Time After: {current_date}")
 
 # Load Rides & Weather Data From Hopsworks Feature Store
 
