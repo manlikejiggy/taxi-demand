@@ -6,10 +6,10 @@ import src.config as config
 from src.data import transform_raw_data_into_ts_data
 
 current_date = pd.to_datetime(datetime.now(), utc=True).floor('h')
-print(f"Inference Pipeline Current Time Before: {current_date}")
+print(f"Feature Pipeline Current Time Before: {current_date}")
 #current_date = pd.to_datetime(datetime.now(), utc=True).floor('h')  + timedelta(hours=1)
 current_date += timedelta(hours=1)
-print(f"Inference Pipeline Current Time After: {current_date}")
+print(f"Feature Pipeline Current Time After: {current_date}")
 
 # we fetch raw data for the last 28 days, to add redundancy to our data pipeline
 fetch_data_to = current_date
